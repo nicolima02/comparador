@@ -31,11 +31,16 @@ app.use('/playersFlexStats', createProxyMiddleware({
     changeOrigin: true 
 }));
 
-
 app.use('/buscar',createProxyMiddleware({
     target: 'https://lol-web-api.op.gg/api/v1.0/internal/bypass/summoners/v2/las/autocomplete',
-    changeOrigin: true
+    changeOrigin: true,
+    onProxyReq: function(proxyReq, req, res) {
+        const params = new URLSearchParams(req.query);
+        const newUrl = proxyReq.path + '?' + params.toString();
+        proxyReq.path = newUrl;
+    }
 }));
+
 
 
 app.get('/', (req, res) => {
