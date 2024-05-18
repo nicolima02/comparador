@@ -38,7 +38,7 @@ const Player = ()=>{
             setOtherPlayer([]);
         };
         if (name.length >= 3) {
-            axios.get(`https://comparadorback.vercel.app/buscar?name=${name}`, {
+            axios.get(`https://comparadorback.vercel.app/buscar?gamename=${name}`, {
                 headers: {
                     'Content-Type': 'application/json; charset=utf-8',
                 },
