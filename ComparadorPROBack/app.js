@@ -41,3 +41,5 @@ app.use('/players', playersRouter);
 app.listen(port, () => {
     console.log(`La aplicación está escuchando en el puerto ${port}`);
 });
+
+module.exports = app;
