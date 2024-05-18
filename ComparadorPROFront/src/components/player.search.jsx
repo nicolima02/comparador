@@ -38,7 +38,7 @@ const Player = ()=>{
             setOtherPlayer([]);
         };
         if (name.length >= 3) {
-            axios.get(`https://lol-web-api.op.gg/api/v1.0/internal/bypass/summoners/v2/las/autocomplete?gameName=${name}`, {
+            axios.get(`https://comparadorback.vercel.app/buscar?name=${name}`, {
                 headers: {
                     'Content-Type': 'application/json; charset=utf-8',
                 },

@@ -13,7 +13,7 @@ const PlayerInfo = ({player}) => {
     const [playerFlexStats, setPlayerFlexStats] = useState(null);
     useEffect(() => {
         if (player) {
-            axios.post('http://localhost:8080/playersInfoSolo', {
+            axios.post('https://comparadorback.vercel.app/playersInfoSolo', {
                 "operationName": "LolProfilePageSummonerInfoQuery",
                 "variables": {
                     "gameName": `${player.game_name}`,
@@ -40,7 +40,7 @@ const PlayerInfo = ({player}) => {
                 .catch((err) => {
                     console.error(err);
                 });
-                axios.post('http://localhost:8080/playersInfoFlex', {
+                axios.post('https://comparadorback.vercel.app/playersInfoFlex', {
                 "operationName": "LolProfilePageSummonerInfoQuery",
                 "variables": {
                     "gameName": `${player.game_name}`,
@@ -67,7 +67,7 @@ const PlayerInfo = ({player}) => {
                 .catch((err) => {
                     console.error(err);
                 });
-        axios.post('http://localhost:8080/playersSoloStats', {   
+        axios.post('https://comparadorback.vercel.app/playersSoloStats', {   
                 "operationName": "LolProfilePageChampionsPoolQuery",
                 "variables": {
                     "top": 50,
@@ -101,7 +101,7 @@ const PlayerInfo = ({player}) => {
         .catch((err) => {
             console.log(err);
         })
-        axios.post('http://localhost:8080/playersFlexStats', {   
+        axios.post('https://comparadorback.vercel.app/playersFlexStats', {   
                 "operationName": "LolProfilePageChampionsPoolQuery",
                 "variables": {
                     "top": 50,
